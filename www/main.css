@@ -1,0 +1,32 @@
+/*<link rel="main"
+  href="https://fonts.googleapis.com/css?family=Silkscreen">*/
+
+ul {
+  background-color: #002035;
+    display: flex;
+  justify-content: flex-end;
+  list-style-type: none;
+  
+}
+
+ul li a {
+  color: #ffffff;
+    display: block;
+  font-size: 1.6rem;
+  font-family: "Times New Roman", Times, serif;
+  /*font-family: "Open Sans", sans-serif;*/
+  padding: 1.5rem 1.6rem;
+  text-decoration: none;
+  transition: all, 0.1s;
+}
+
+a:link, a:visited, a:hover, a:active {
+  color: #ffffff;
+    text-decoration: none;
+}
+
+ul li a:hover {
+  background-color: #1589d1;
+    color: #ffffff;
+}
+ 
