@@ -49,7 +49,7 @@ darter_mod_Server  <- function(id) {
         
           summary() %>%
             ggplot(aes(Date, freq, color=dominant_veg))+
-            geom_point()+
+            geom_point(size=3)+
             labs(y = expression(paste("Fountain Darters /", m^2)),x="")
         } , res = 96)   
       

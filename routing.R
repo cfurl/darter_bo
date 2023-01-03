@@ -45,9 +45,9 @@ ui <- fluidPage(
   theme = "main.css",
   tags$ul(
     tags$li(a(href = route_link("/"),"Home")),
-    tags$li(a(href = route_link("text_tester"), "Elegant Text")),
-    tags$li(a(href = route_link("veg_comp"), "Vegetation Boxplots")),
-    tags$li(a(href = route_link("veg_time"), "Vegetation Time Series")),
+    tags$li(a(href = route_link("text_tester"), "Background")),
+    tags$li(a(href = route_link("veg_comp"), "Darter Boxplots")),
+    tags$li(a(href = route_link("veg_time"), "Darter Time Series")),
     tags$li(a(href = route_link("veg_coverage"), "Vegetation Coverage"))
   ),
   router$ui
