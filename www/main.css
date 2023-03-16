@@ -29,4 +29,37 @@ ul li a:hover {
   background-color: #1589d1;
     color: #ffffff;
 }
- 
+
+.highlights {
+    display: flow-root;
+}
+
+.highlights .left {
+    width: 50%;
+    float: left;
+} 
+
+.highlights-text {
+    display: inline-block;
+    width: 50%;
+}
+
+.handbook-text {
+  font-style: italic;
+  color:black;
+}
+
+.darter-tables{
+  display: inline-block;
+    width: 50%;
+}
+
+.twr-table{
+  display: inline-block;
+    width: 50%;
+}
+
+.left {
+  padding: 1.5rem 1.6rem;
+}
+

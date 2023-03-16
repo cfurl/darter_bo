@@ -8,47 +8,59 @@ library(markdown)
 library(thematic)
 library(knitr)
 library(kableExtra)
+library(htmltools)
 
 # modules for home_page
-source(".\\home_page\\hero_image_UI.R")
-source(".\\home_page\\hero_image_server.R")
+source("home_page/hero_image_UI.R")
+source("home_page/hero_image_server.R")
+
+source("maps/text_maps_ui.R")
+source("maps/text_maps_server.R")
+
+# html/css for readMe page
+source("text/text_ui.R")
+source("text/text_server.R")
 
 # modules for boxplots comparing vegetation types
-source(".\\box_plot_page\\darter_veg_UI.R")
-source(".\\box_plot_page\\darter_veg_Server.R")
+source("box_plot_page/darter_veg_UI.R")
+source("box_plot_page/darter_veg_Server.R")
 
 
 # modules for comparing dropnet time series plots
-source(".\\time_series_page\\darter_mod_UI.R")
-source(".\\time_series_page\\darter_mod_server.R")
+source("time_series_page/darter_mod_UI.R")
+source("time_series_page/darter_mod_server.R")
 
 # modules for vegetation coverage
-source(".\\veg_coverage_barplot_page\\veg_coverage_UI.R")
-source(".\\veg_coverage_barplot_page\\veg_coverage_Server.R")
+source("veg_coverage_barplot_page/veg_coverage_UI.R")
+source("veg_coverage_barplot_page/veg_coverage_Server.R")
 
 
 home_page <- hero_image_UI("still_curious_function_naming")
-test_text<-fluidPage(includeMarkdown(knit(".\\text\\template_markdown_test.RMD")))
+
+test_text<-text_UI("abc")
+test_text_maps<-text_maps_UI("abcd")
 veg_comparison_page <- darter_veg_UI("some_name")
 veg_time_series_page <- darter_mod_UI("something")
 veg_coverage_page<-veg_coverage_UI("lets_go")
 
 router <- make_router(
-  route("/", home_page),
+  route("aa", home_page),
   route("veg_comp", veg_comparison_page),
   route("veg_time", veg_time_series_page),
-  route("veg_coverage",veg_coverage_page),
-  route("text_tester", test_text)  
+  route("veg_coverage",veg_coverage_page),  
+  route("text_tester", test_text),
+  route("veg_maps", test_text_maps) 
 )
 
 ui <- fluidPage(
   theme = "main.css",
   tags$ul(
-    tags$li(a(href = route_link("/"),"Home")),
+    tags$li(a(href = route_link("aa"),"Home")),
     tags$li(a(href = route_link("text_tester"), "Background")),
     tags$li(a(href = route_link("veg_comp"), "Darter Boxplots")),
     tags$li(a(href = route_link("veg_time"), "Darter Time Series")),
-    tags$li(a(href = route_link("veg_coverage"), "Vegetation Coverage"))
+    tags$li(a(href = route_link("veg_coverage"), "Vegetation Coverage")), 
+    tags$li(a(href = route_link("veg_maps"), "Vegetation Maps"))
   ),
   router$ui
 )
@@ -57,7 +69,8 @@ server <- function(input, output, session) {
   router$server(input, output, session)
   
   {hero_image_Server("still_curious_function_naming")
-   # fullpage_img_Server("still_curious_function_naming")
+   text_Server("abc")
+   text_maps_Server("abcd")
     darter_veg_Server("some_name")
     darter_mod_Server("something")
     veg_coverage_Server("lets_go")

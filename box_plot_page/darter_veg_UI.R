@@ -3,7 +3,7 @@ library(bslib)
 
 # call in the data.  I think I'll do this on the UI side until I see a reason not to.
 
-both_darter<-read_csv(".\\data\\both_darter.csv",
+both_darter<-read_csv("data/both_darter.csv",
                     col_types=cols(
                       Date=col_date(format="%m/%d/%Y")
                     )) %>%
@@ -43,7 +43,8 @@ darter_veg_UI <- function(id) {
                        radioButtons(NS(id,"reach"), "Location", choices = c("Landa Lake","Old Channel Reach", "Upper New Channel Reach", 
                                                                    "Upper Spring Run"  ),selected = "Landa Lake"),
                        checkboxGroupInput(NS(id,"vegtype"), "Vegetation", choices = veg_types_box,selected = "Hygrophila"),
-                       checkboxGroupInput(NS(id,"ltbg"),"LTBG", choices = veg_types_box,selected = "Bryophytes")
+                       checkboxGroupInput(NS(id,"ltbg"),"LTBG", choices = veg_types_box,selected = "Bryophytes"),
+                       tags$div(tags$span(style="font-weight:bold;", "Boxplots of fountain darter densities from dropnet results 2000-2021."))
                        
                        
                      ), #wellPanel

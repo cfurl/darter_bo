@@ -2,8 +2,8 @@ library(tidyverse)
 library(grid)
 library(shiny)
 
-veg = read.table(".\\data\\veg_community_comp_full_cf.txt", header = TRUE)
-sys = read_csv(".\\data\\system.txt")
+veg = read.table("data/veg_community_comp_full_cf.txt", header = TRUE)
+sys = read_csv("data/system.txt")
 
 
 #Comal
@@ -42,7 +42,9 @@ fluidPage(
              
              radioButtons(NS(id,"system"), "River System", choices = c("Comal","San Marcos"),selected = "Comal"),
              checkboxGroupInput(NS(id,"reach"), "Location", choices = c("Landa Lake", "Upper Spring Run", "Old Channel",
-                                                            "Upper New Channel", "Lower New Channel"),selected = "Landa Lake")
+                                                            "Upper New Channel", "Lower New Channel"),selected = "Landa Lake"),
+             tags$div(tags$span(style="font-weight:bold;", "Stacked barplots of submerged aquatic vegetation coverage from 
+                                biological monitoring surveys 2013-2021."))
              
              
              

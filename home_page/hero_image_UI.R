@@ -20,11 +20,12 @@ hero_image_UI <- function(id) {
     
     tags$style (".will-this-work {color: #002035;
                 position: fixed;
-  	            bottom: 0;
-                font-family: cursive;
-                font-size: 3.8em}"),
+  	            bottom: 10px;
+                font-family: sans-serif;
+                float:right;
+                font-size: 2.8em}"),
     
-    tags$p(class="will-this-work" ,"Etheostoma fonticola")
+    tags$p(class="will-this-work" ,"EAHCP Biological Objectives Subcommittee")
   )
 }
 #

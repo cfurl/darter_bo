@@ -1,0 +1,14 @@
+name: darter_biol_obj
+title: darter_biol_obj
+username:
+account: edwardsaquiferhcp
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 8518535
+bundleId: 6933601
+url: https://edwardsaquiferhcp.shinyapps.io/darter_biol_obj/
+when: 1678318550.64873
+lastSyncTime: 1678318550.64874
+asMultiple: FALSE
+asStatic: FALSE
+ignoredFiles: README.md|template_markdown_test.md|text/kable_goals_cm_combined.csv|text/kable_goals_sm_combined.csv|text/kable_goals_twr.csv|text/template_markdown_test.Rmd|text/wwww.jpg

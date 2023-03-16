@@ -22,7 +22,8 @@ darter_mod_UI <- function(id) {
                            max = as.Date("2022-01-01", "%Y-%m-%d"),
                            value = c(as.Date("2008-02-01", "%Y-%m-%d"),as.Date("2020-02-01", "%Y-%m-%d")),
                            timeFormat = "%Y", ticks = T, animate = F
-               )
+               ),
+               tags$div(tags$span(style="font-weight:bold;", "Time series of fountain darter densities from dropnet results 2000-2021."))
                
                
                
