@@ -47,6 +47,7 @@ ul li a:hover {
 .handbook-text {
   font-style: italic;
   color:black;
+  list-style-type: none;
 }
 
 .darter-tables{
@@ -56,10 +57,32 @@ ul li a:hover {
 
 .twr-table{
   display: inline-block;
-    width: 50%;
+    width: 30%;
 }
 
 .left {
   padding: 1.5rem 1.6rem;
 }
 
+.help{
+  list-style-type: none;
+}
+
+.ninja {
+/* visibility:hidden; this doesn't collapse*/
+/* display:none; this collapses */
+display:inline-block;
+/* border:1px solid #25526a; */
+border-color:red;
+border-width:1px;
+border-style:dotted;
+width: 25%;
+/* padding:15px; */
+padding-top: 2rem;
+margin:10px 0 10px 5;
+text-align:center;
+justify-content: center;
+align-items: center;
+min-width:100px;
+
+}
